@@ -1,12 +1,20 @@
 class Dictionary {
 	constructor(words) {
-		this.dict = words
+		const wordMap = words.reduce((acc, word) => {
+			acc[word] = word
+			return acc
+		}, {})
+		this.dict = wordMap
 	}
 
 	isInDict(word) {
+		if (this.dict[word]) {
+			return true
+		}
+
 		const template = word.replaceAll('*', '.')
 		const reg = new RegExp(template)
-		return this.dict.some(w => reg.test(w))
+		return Object.values(this.dict).some(w => reg.test(w))
 	}
 }
 
