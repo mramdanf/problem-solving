@@ -1,28 +1,26 @@
 class Dictionary {
 	constructor(words) {
 		const wordMap = words.reduce((acc, word) => {
-			acc[word] = word
+			acc[word] = true
+			word.split('').forEach((_, i) => {
+				const start = word.slice(0, i)
+				const end = word.slice(i + 1)
+				const partialWord = `${start}*${end}`
+				acc[partialWord] = true
+			})
 			return acc
 		}, {})
 		this.dict = wordMap
 	}
 
 	isInDict(word) {
-		if (this.dict[word]) {
-			return true
-		}
-
-		const template = word.replaceAll('*', '.')
-		const reg = new RegExp(template)
-		return Object.values(this.dict).some(w => reg.test(w))
+		return !!this.dict[word]
 	}
 }
 
 const test = new Dictionary(['cat', 'car', 'plan'])
 
 console.log(test.isInDict('cat')) // true
-console.log(test.isInDict('car')) // true
-console.log(test.isInDict('joe')) // false
 console.log(test.isInDict('*at')) // true
-console.log(test.isInDict('*a*')) // true
-console.log(test.isInDict('*aj*')) // false
+console.log(test.isInDict('*a*')) // false
+console.log(test.isInDict('don')) // false
