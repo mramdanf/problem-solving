@@ -1,27 +1,17 @@
 function searchFamous(str) {
-	const arrStr = str.split('')
-	const uniqueChars = new Set(arrStr)
 	let result = {}
-	uniqueChars.forEach(c => {
-		let totalFound = 0
-		arrStr.forEach(s => {
-			if (c === s) {
-				totalFound++
-			}
-		})
-		if (totalFound > 0) {
-			result[c] = totalFound
+	for(let char of str) {
+		result[char] ? result[char]++ : result[char] = 1
+	}
+	let maxNum = 0
+	let maxChar = 0
+	for (let char in result) {
+		if (result[char] > maxNum) {
+			maxNum = result[char]
+			maxChar = char
 		}
-	})
-	let maxChar = ''
-	let maxFound = 0
-	Object.keys(result).forEach(key => {
-		if (result[key] > maxFound) {
-			maxFound = result[key]
-			maxChar = key
-		}
-	})
-	console.log(`${maxChar} total of ${maxFound}`)
+	}
+	console.log(`${maxChar} total of ${maxNum}`)
 }
 
 searchFamous('ramdan') // a total of 2
