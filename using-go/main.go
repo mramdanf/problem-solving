@@ -7,4 +7,6 @@ func main() {
 	linked_list.add_node(3)
 	linked_list.add_node(4)
 	linked_list.print_list()
+	linked_list.remove_node(40)
+	linked_list.print_list()
 }
