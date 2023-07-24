@@ -1,12 +1,27 @@
 package main
 
+import (
+	"fmt"
+	bst "using-go/bst"
+)
+
 func main() {
-	linked_list := &LinkedList{}
-	linked_list.add_node(1)
-	linked_list.add_node(2)
-	linked_list.add_node(3)
-	linked_list.add_node(4)
-	linked_list.print_list()
-	linked_list.remove_node(40)
-	linked_list.print_list()
+	binary_search_tree := &bst.BinarySearchTree{}
+	binary_search_tree.AddNode(binary_search_tree.Root, 10)
+	binary_search_tree.AddNode(binary_search_tree.Root, 5)
+	binary_search_tree.AddNode(binary_search_tree.Root, 15)
+	binary_search_tree.AddNode(binary_search_tree.Root, 20)
+	binary_search_tree.AddNode(binary_search_tree.Root, 17)
+	binary_search_tree.AddNode(binary_search_tree.Root, 4)
+	binary_search_tree.AddNode(binary_search_tree.Root, 6)
+	binary_search_tree.InOrderTraversal(binary_search_tree.Root)
+	fmt.Println()
+	binary_search_tree.PreOrderTraversal(binary_search_tree.Root)
+	fmt.Println()
+	binary_search_tree.PostOrderTraversal(binary_search_tree.Root)
+	fmt.Println()
+	fmt.Println(binary_search_tree.Search(binary_search_tree.Root, 5))
+	fmt.Println(binary_search_tree.Search(binary_search_tree.Root, 17))
+	fmt.Println(binary_search_tree.Search(binary_search_tree.Root, 100))
+	fmt.Println(binary_search_tree.Search(binary_search_tree.Root, 110))
 }
