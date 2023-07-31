@@ -83,3 +83,17 @@ func (b *BinarySearchTree) Search(node *Node, data int) bool {
 	return false
 }
 
+func (b *BinarySearchTree) PrintAllLeaves(node *Node) {
+	if node == nil {
+		return
+	}
+	
+	b.PrintAllLeaves(node.Left)
+
+	if node.Left == nil && node.Right == nil {
+		fmt.Print(node.Data, " ")
+	}
+
+	b.PrintAllLeaves(node.Right)
+}
+
