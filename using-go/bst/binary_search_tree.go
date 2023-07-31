@@ -97,3 +97,24 @@ func (b *BinarySearchTree) PrintAllLeaves(node *Node) {
 	b.PrintAllLeaves(node.Right)
 }
 
+func (b *BinarySearchTree) LevelOrderTraversal() {
+	if b.Root == nil {
+		return
+	}
+
+	nodeList := make([](*Node), 0)
+	nodeList = append(nodeList, b.Root)
+
+	for len(nodeList) != 0 {
+		current := nodeList[0]
+		fmt.Print(current.Data, " ")
+		if current.Left != nil {
+			nodeList = append(nodeList, current.Left)
+		}
+		if current.Right != nil {
+			nodeList = append(nodeList, current.Right)
+		}
+		nodeList = nodeList[1:]
+	} 
+}
+

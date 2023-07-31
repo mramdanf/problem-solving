@@ -19,4 +19,6 @@ func main() {
 	// binaryn(binary_search_tree.Search(binary_search_tree.Root, 110))
 	binary_search_tree.PrintAllLeaves(binary_search_tree.Root)
 	fmt.Println()
+	binary_search_tree.LevelOrderTraversal()
+	fmt.Println()
 }
