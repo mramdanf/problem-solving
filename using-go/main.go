@@ -1,5 +1,9 @@
 package main
 
+import (
+	m "using-go/mergesortedarr"
+)
+
 func main() {
 	// binary_search_tree := &bst.BinarySearchTree{}
 	// binary_search_tree.AddNode(binary_search_tree.Root, 10)
@@ -26,7 +30,8 @@ func main() {
 	// myLL.Remove(3)
 	// myLL.Print()
 
-	duplicateZeros([]int{1,0,2})
+	// m.merge([]int{1,2,3}, 3, []int{2}, 1)
+	m.Merge([]int{1,2,3}, 3, []int{2}, 1)
 	// 1,0,0,2,3,0,4,5,0
 	// [1 0 2 -1]
 	// []
