@@ -1,9 +1,5 @@
 package main
 
-import (
-	ll "using-go/linked_list"
-)
-
 func main() {
 	// binary_search_tree := &bst.BinarySearchTree{}
 	// binary_search_tree.AddNode(binary_search_tree.Root, 10)
@@ -22,11 +18,17 @@ func main() {
 	// fmt.Println()
 
 	// linkedList = &LinkedList
-	myLL := &ll.LinkedList{}
-	myLL.Add(1)
-	myLL.Add(2)
-	myLL.Add(3)
-	myLL.Print()
-	myLL.Remove(3)
-	myLL.Print()
+	// myLL := &ll.LinkedList{}
+	// myLL.Add(1)
+	// myLL.Add(2)
+	// myLL.Add(3)
+	// myLL.Print()
+	// myLL.Remove(3)
+	// myLL.Print()
+
+	duplicateZeros([]int{1,0,2})
+	// 1,0,0,2,3,0,4,5,0
+	// [1 0 2 -1]
+	// []
+	// []
 }
