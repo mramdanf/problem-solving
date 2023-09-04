@@ -1,47 +1,56 @@
-
-[1,0,2,3,0,4,5,0]
-
+[1,2,2,3]
+updatedLen = 4
 i = 0
-    arr[0] === 0
+    nums[0] == nums[1]
+    updatedLen = 4
 i = 1
-    arr[1] === 0
-        [1,0,2,3,0,4,5,0,-1]
-        j = 7, index = 1
-            arr[8] = arr[7] -> [1,0,2,3,0,4,5,0,0]
-            arr[7] = arr[6] -> [1,0,2,3,0,4,5,5,0]
-            arr[6] = arr[5] -> [1,0,2,3,0,4,4,5,0]
-            arr[5] = arr[4] -> [1,0,2,3,0,0,4,5,0]
-            arr[4] = arr[3] -> [1,0,2,3,3,0,4,5,0]
-            arr[3] = arr[2] -> [1,0,2,2,3,0,4,5,0]
-            arr[2] = arr[1] -> [1,0,0,2,3,0,4,5,0]
-        i += 2
-i = 3
-    arr[3] === 0
-    i++
-i = 4
-    arr[4] === 0
-    i++
-i = 5
-    arr[5] === 0
-    [1,0,0,2,3,0,4,5,0,-1]
-    j = 8, index = 5
-        arr[9] = arr[8] -> [1,0,0,2,3,0,4,5,0,0]
-
--------------
-[4,5,0]
-i = 0
-    arr[0] === 0
-i = 1
-    arr[1] === 0
+    nums[1] == nums[2]
+    j = 3
+        nums[2] = nums[3] -> [1,2,3,3]
+    j = 4
+    updatedLen = 3
 i = 2
-    arr[2] === 0
-    [4,5,0,-1]
-    j = 2, index = 2
-        arr[3] = arr[2] -> [4,5,0,0]
+    nums[2] == nums[3]
+    j = 4
+    updatedLen = 3
+i = 3
+printArray: 1,2,3
 
+[1,1,2,3]
+updatedLen = 4
+i = 0
+    nums[0] == nums[1]
+    j = 2
+        nums[1] = nums[2] -> [1,2,2,3]
+    j = 3
+        nums[2] = nums[3] -> [1,2,3,3]
+    j = 4
+    updatedLen = 3
+i = 1
+    nums[1] == nums[2]
+    updatedLen = 3
+i = 2
+    nums[2] == nums[3]
+    j = 4
+    updatedLen = 3
+i = 3
+printArray: 1,2,3
 
-
-arr = append(arr, -1)
-for (i := len(arr)-2; i >= index; i--) {
-    arr[i+1] = arr[i]
-}
+[1,1,2,3,3]
+updatedLen = 5
+i = 0
+    nums[0] == nums[1]
+    j = 2
+        nums[1] = nums[2] -> [1,2,2,3,3]
+    j = 3
+        nums[2] = nums[3] -> [1,2,3,3,3]
+    j = 4
+        nums[3] = nums[4] -> [1,2,3,3,3]
+    j = 5
+    updatedLen = 4
+i = 1
+    nums[1] == nums[2]
+i = 2
+    nums[2] == nums[3]
+    j = 4
+    

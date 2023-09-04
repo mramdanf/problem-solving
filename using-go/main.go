@@ -1,5 +1,9 @@
 package main
 
+import (
+	rd "using-go/removeduplicate"
+)
+
 func main() {
 	// binary_search_tree := &bst.BinarySearchTree{}
 	// binary_search_tree.AddNode(binary_search_tree.Root, 10)
@@ -38,7 +42,10 @@ func main() {
 	// r.RemoveElement([]int{0,1,2,2,1}, 2) // 3 -> 0 1 1
 	// r.RemoveElement([]int{0,1,4,2,1}, 2) // 4 -> 0 1 4 1
 	// r.RemoveElement([]int{3,2,2,3}, 3) // 2 -> 2 2
-	duplicateZeros([]int{1,0,2,3,0,4,5,0}) // 1,0,0,2,3,0,0,4,5,0,0
+	// duplicateZeros([]int{1,0,2,3,0,4,5,0}) // 1,0,0,2,3,0,0,4,5,0,0
 	// duplicateZeros([]int{4,5,0}) // 4,5,0,0
+	rd.RemoveDuplicate([]int{1,2,2,3}) // 1,2,3
+	rd.RemoveDuplicate([]int{1,1,2,3}) // 1,2,3
+	rd.RemoveDuplicate([]int{1,1,2,3,3}) // 1,2,3
 }
 
