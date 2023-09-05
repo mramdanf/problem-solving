@@ -1,56 +1,26 @@
-[1,2,2,3]
-updatedLen = 4
-i = 0
-    nums[0] == nums[1]
-    updatedLen = 4
-i = 1
-    nums[1] == nums[2]
-    j = 3
-        nums[2] = nums[3] -> [1,2,3,3]
-    j = 4
-    updatedLen = 3
-i = 2
-    nums[2] == nums[3]
-    j = 4
-    updatedLen = 3
-i = 3
-printArray: 1,2,3
+[3,5,5]
+len = 3
+peakReached = false
+i = 0, 0 < 2
+    5 < 3 && 0 > 0
+    5 <= 3 && !peakReached
+    5 >= 3 && peakReached
+i = 1, 1 < 2
+    5 < 5 && 1 >0
+    5 >= 5 && !peakReached
+false
 
-[1,1,2,3]
-updatedLen = 4
-i = 0
-    nums[0] == nums[1]
-    j = 2
-        nums[1] = nums[2] -> [1,2,2,3]
-    j = 3
-        nums[2] = nums[3] -> [1,2,3,3]
-    j = 4
-    updatedLen = 3
-i = 1
-    nums[1] == nums[2]
-    updatedLen = 3
-i = 2
-    nums[2] == nums[3]
-    j = 4
-    updatedLen = 3
-i = 3
-printArray: 1,2,3
-
-[1,1,2,3,3]
-updatedLen = 5
-i = 0
-    nums[0] == nums[1]
-    j = 2
-        nums[1] = nums[2] -> [1,2,2,3,3]
-    j = 3
-        nums[2] = nums[3] -> [1,2,3,3,3]
-    j = 4
-        nums[3] = nums[4] -> [1,2,3,3,3]
-    j = 5
-    updatedLen = 4
-i = 1
-    nums[1] == nums[2]
-i = 2
-    nums[2] == nums[3]
-    j = 4
-    
+---------
+[3,5,6]
+len = 3
+peakReached = false
+i = 0, 0 < 2
+    5 < 3 && 0 > 0
+    5 <= 3 && !peakReached
+    5 >= 3 && peakReached
+i = 1, 1 < 2
+    6 < 5 && 1 > 0
+    6 <= 5 && !peakReached
+    6 >= 5 && peakReached
+i = 2, 2 < 2
+false

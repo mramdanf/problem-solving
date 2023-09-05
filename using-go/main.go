@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	de "using-go/doubleexist"
+	vma "using-go/validmountainarray"
 )
 
 func main() {
@@ -48,8 +48,14 @@ func main() {
 	// rd.RemoveDuplicate([]int{1,2,2,3}) // 1,2,3
 	// rd.RemoveDuplicate([]int{1,1,2,3}) // 1,2,3
 	// rd.RemoveDuplicate([]int{1,1,2,3,3}) // 1,2,3
-	fmt.Println(de.CheckDoubleExist([]int{10,2,5,3}))
-	fmt.Println(de.CheckDoubleExist([]int{3,1,7,11}))
-	fmt.Println(de.CheckDoubleExist([]int{-2,0,10,-19,4,6,-8}))
+	// fmt.Println(de.CheckDoubleExist([]int{10,2,5,3}))
+	// fmt.Println(de.CheckDoubleExist([]int{3,1,7,11}))
+	// fmt.Println(de.CheckDoubleExist([]int{-2,0,10,-19,4,6,-8}))
+	// fmt.Println(vma.ValidMountainArray([]int{2,1})) // false
+	fmt.Println(vma.ValidMountainArray([]int{3,5,5})) // false
+	fmt.Println(vma.ValidMountainArray([]int{3,5,6})) // false
+	fmt.Println(vma.ValidMountainArray([]int{0,3,2,1})) // true
+	fmt.Println(vma.ValidMountainArray([]int{2,0,2})) // false
+	fmt.Println(vma.ValidMountainArray([]int{0,1,2,1,2})) // false
 }
 
