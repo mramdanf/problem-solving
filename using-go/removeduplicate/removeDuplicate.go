@@ -3,24 +3,16 @@ package removeduplicate
 import "fmt"
 
 func RemoveDuplicate(nums []int) {
-	updatedLen := len(nums)
-	for i := 0; i < updatedLen; {
-		if nums[i] == nums[i+1] {
-			// delete next duplicate
-			for j := i+2; j < updatedLen; j++ {
-				nums[j-1] = nums[j]
-			}
-			
-			// if there is deleting at least one
-			// than we should decrement the length
-			if i+2 < updatedLen || i+2 == updatedLen {
-				updatedLen--
-			}
-			continue
+	prev := nums[0]
+	l := 1
+	for i := 1; i < len(nums); i++ {
+		if nums[i] != prev {
+			nums[l] = nums[i]
+			l++
 		}
-		i++
+		prev = nums[i]
 	}
-	printArray(nums, updatedLen)
+	printArray(nums, l)
 }
 
 func printArray(nums []int, length int) {

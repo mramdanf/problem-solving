@@ -1,26 +1,62 @@
-[3,5,5]
+[1,2,2]
+prev = 1
 len = 3
-peakReached = false
-i = 0, 0 < 2
-    5 < 3 && 0 > 0
-    5 <= 3 && !peakReached
-    5 >= 3 && peakReached
-i = 1, 1 < 2
-    5 < 5 && 1 >0
-    5 >= 5 && !peakReached
-false
+l = 1
+i = 1, 1 < 3
+    nums[1] != prev -> 2 != 1
+        nums[1] = nums[1] ->  [1,2,2]
+        l = 2
+    prev = 2
+i = 2, 2 < 3
+    nums[2] != prev -> 2 != 2
+    prev = 2
+i = 3, 3 < 3
+l = 2
 
----------
-[3,5,6]
-len = 3
-peakReached = false
-i = 0, 0 < 2
-    5 < 3 && 0 > 0
-    5 <= 3 && !peakReached
-    5 >= 3 && peakReached
-i = 1, 1 < 2
-    6 < 5 && 1 > 0
-    6 <= 5 && !peakReached
-    6 >= 5 && peakReached
-i = 2, 2 < 2
-false
+[1,2,2,3]
+prev = 1
+l = 1
+len = 4
+i = 1, 1 < 4
+    nums[1] != prev -> 2 != 1
+        nums[1] = nums[1] -> [1,2,2,3]
+        l = 2
+    prev = 2
+i = 2, 2 < 4
+    nums[2] != prev -> 2 != 2
+    prev = 2
+i = 3, 3 < 4
+    nums[3] != prev -> 3 != 2
+        nums[2] = nums[3] -> [1,2,3,3]
+        l = 3
+    prev = 3
+i = 4, 4 < 4
+l = 3
+[1,2,3,3]
+
+[1,1,2,2,3,3]
+prev = 1
+l = 1
+len = 6
+i = 1, 1 < 6
+    nums[1] != prev -> 1 != 1
+    prev = 1
+i = 2, 2 < 6
+    nums[2] != prev -> 2 != 1
+        nums[1] = nums[2] -> [1,2,2,2,3,3]
+        l = 2
+    prev = 2
+i = 3, 3 < 6
+    nums[3] != prev -> 2 != 2
+    prev = 2
+i = 4, 4 < 6
+    nums[4] != prev -> 3 != 2
+        nums[2] = nums[4] -> [1,2,3,2,3,3]
+        l = 3
+    prev = 3
+i = 5, 5 < 6
+    nums[5] != prev -> 3 != 3
+    prev = 3
+i = 6, 6 < 6
+l = 3
+[1,2,3,2,3,3]
