@@ -1,7 +1,8 @@
 package main
 
 import (
-	rd "using-go/removeduplicate"
+	"fmt"
+	re "using-go/replaceelementwithhighest"
 )
 
 func main() {
@@ -44,9 +45,9 @@ func main() {
 	// r.RemoveElement([]int{3,2,2,3}, 3) // 2 -> 2 2
 	// duplicateZeros([]int{1,0,2,3,0,4,5,0}) // 1,0,0,2,3,0,0,4,5,0,0
 	// duplicateZeros([]int{4,5,0}) // 4,5,0,0
-	rd.RemoveDuplicate([]int{1,2,2,3}) // 1,2,3
-	rd.RemoveDuplicate([]int{1,1,2,3}) // 1,2,3
-	rd.RemoveDuplicate([]int{1,1,2,3,3}) // 1,2,3
+	// rd.RemoveDuplicate([]int{1,2,2,3}) // 1,2,3
+	// rd.RemoveDuplicate([]int{1,1,2,3}) // 1,2,3
+	// rd.RemoveDuplicate([]int{1,1,2,3,3}) // 1,2,3
 	// fmt.Println(de.CheckDoubleExist([]int{10,2,5,3}))
 	// fmt.Println(de.CheckDoubleExist([]int{3,1,7,11}))
 	// fmt.Println(de.CheckDoubleExist([]int{-2,0,10,-19,4,6,-8}))
@@ -56,5 +57,6 @@ func main() {
 	// fmt.Println(vma.ValidMountainArray([]int{0,3,2,1})) // true
 	// fmt.Println(vma.ValidMountainArray([]int{2,0,2})) // false
 	// fmt.Println(vma.ValidMountainArray([]int{0,1,2,1,2})) // false
+	fmt.Println(re.ReplaceElement([]int{17,18,5,4,6,1}))
 }
 
